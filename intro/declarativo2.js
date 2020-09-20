@@ -7,7 +7,6 @@ const alunos = [
     { nome: 'lia', nota: 4.9 },
     { nome: 'rui', nota: 7.0 }
 ]
-
 const estaAprovado = aluno => aluno.nota >= 7
 
 const aprovados = alunos.filter(estaAprovado)
