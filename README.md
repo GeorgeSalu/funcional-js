@@ -1,1 +1,3 @@
 # funcional js
+
+Nos últimos anos várias linguagens acrescentaram aspectos de Programação Funcional, então esse curso é um oportunidade de aprender o Paradigma Funcional e ainda tornar um programador JavaScript muito melhor! Por esse motivo, compreender o paradigma funcional é importante mesmo que você use linguagens Orientadas a Objeto, e garantido que você se tornará um programador melhor e mais completo!
