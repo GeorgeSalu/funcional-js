@@ -6,6 +6,13 @@ const carrinho = [
   { nome: 'tesoura', qtde: 1, preco: 19.10 }
 ]
 
+const getNome = item => item.nome
 const qtdeMaiorQueZero = item => item.qtde > 0
-const produtosValidos = carrinho.filter(qtdeMaiorQueZero)
+const qtdeMuitoGrande = item => item.qtde >= 100
+
+
+const produtosValidos = carrinho
+  .filter(qtdeMaiorQueZero)
+  .map(getNome)
+
 console.log(produtosValidos)
