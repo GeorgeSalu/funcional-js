@@ -16,3 +16,7 @@ const produtosValidos = carrinho
   .map(getNome)
 
 console.log(produtosValidos)
+
+/**
+ * desafio criar uma função similar ao filter
+ */
