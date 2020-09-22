@@ -27,7 +27,7 @@ Os principais assuntos abordados:
   - Scheduler
   - Subject
 
-O que você aprenderá
+O que você aprenderá.
 
   - Criar códigos de forma funcional com a mentalidade correta
   - Escrever código Javascript com a mentalidade de um programador Javascript
