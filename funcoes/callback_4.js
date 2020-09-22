@@ -20,3 +20,15 @@ console.log(produtosValidos)
 /**
  * desafio criar uma função similar ao filter
  */
+
+Array.prototype.meuFilter = function(fn) {
+  const novoArray = []
+
+  for(let i = 0; i < this.length;i++) {
+    if(fn(this[i], i, this)) {
+      novoArray.push(this[i])
+    }
+  }
+
+  return novoArray
+}
