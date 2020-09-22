@@ -13,3 +13,10 @@ const carrinho = [
   { nome: 'lapis', qtde: 3, preco: 5.82 },
   { nome: 'tesoura', qtde: 1, preco: 19.10 }
 ]
+
+const getNome = item => item.nome
+console.log(carrinho.map(getNome))
+
+const getTotal = item => item.qtde * item.preco
+const totais = carrinho.map(getTotal)
+console.log(totais)
