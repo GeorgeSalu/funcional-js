@@ -14,14 +14,14 @@ esperarPor(2000)
   .then(esperarPor)
 
 async function executar() {
-  await esperarPor(1500)
-  console.log('async/await 1...')
+  let valor = await esperarPor(1500)
+  console.log(`async/await 1...${valor}`)
 
   await esperarPor(1500)
-  console.log('async/await 1...')
+  console.log(`async/await 1...${valor}`)
 
   await esperarPor(1500)
-  console.log('async/await 1...')
+  console.log(`async/await 1...${valor}`)
 }
 
 executar()
