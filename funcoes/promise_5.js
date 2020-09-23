@@ -8,5 +8,6 @@ function funcionarOuNao(valor, chanceErro) {
   } )
 }
 
-funcionarOuNao('testando', 0.1)
+funcionarOuNao('testando', 0.9)
   .then(v => console.log(v))
+  .catch(erro => console.log(`erro: ${erro}`))
