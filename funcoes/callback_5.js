@@ -16,3 +16,15 @@ const totaGeral = carrinho
   .reduce(somar)
 
 console.log(totaGeral)
+
+Array.prototype.meuReduce = function(fn, inicial) {
+  let acc = inicial
+  for(let i = 0;i < this.length;i++) {
+    if(!acc && i === 0) {
+      acc = this[i]
+    } else {
+      acc = fn(acc, this[i], i, this)
+    }
+  }
+  return acc
+}
