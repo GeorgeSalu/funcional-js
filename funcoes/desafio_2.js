@@ -11,18 +11,22 @@ const carrinho = [
 // 1. fragil: true
 // 2. qtde 4,preco: 27.10 -> total
 // 3. media totais
+const fragil = item => item.fragil
+const getTotal = item => item.qtde * item.preco
+const getMedia = (acc, el) => {
+  const novaQtde = acc.qtde + 1
+  const novoTotal = acc.total + el
+  return {
+    qtde: novaQtde,
+    total: novoTotal,
+    media: novoTotal / novaQtde
+  }
+}
+const mediaInicial = { qtde: 0, total: 0, media: 0 }
 
 const media = carrinho
-  .filter(item => item.fragil)
-  .map(item => item.qtde * item.preco)
-  .reduce((acc, el, i, array) => {
-    const novaQtde = acc.qtde + 1
-    const novoTotal = acc.total + el
-    return {
-      qtde: novaQtde,
-      total: novoTotal,
-      media: novoTotal / novaQtde
-    }
-  }, { qtde: 0, total: 0, media: 0 })
+  .filter(fragil)
+  .map(getTotal)
+  .reduce(getMedia, mediaInicial)
 
 console.log(media)
