@@ -6,6 +6,8 @@ const carrinho = [
   { nome: 'tesoura', qtde: 1, preco: 19.10, fragil: true }
 ]
 
+// filter, map, reduce
+
 // 1. fragil: true
-// 2. qtde 4,
+// 2. qtde 4,preco: 27.10 -> total
 // 3. media totais
