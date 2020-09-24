@@ -14,8 +14,14 @@ function gerarNumerosEntre(min, max, numerosProibidos) {
   })
 }
 
-function gerarMegaSena()
+async function gerarMegaSena(qtdeNumeros) {
+  const numeros = []
+  for( let _ of Array(qtdeNumeros).fill()) {
+    numeros.push(await gerarNumerosEntre(1, 60, numeros))
+  }
+  return numeros
+}
 
-gerarNumerosEntre(1,5, [1,2,4])
+gerarMegaSena(15)
   .then(console.log)
   .catch(console.log)
