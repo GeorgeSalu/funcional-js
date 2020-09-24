@@ -1,4 +1,7 @@
+const path = require('path')
 const fn = require('./funcoes')
 
-fn.teste1()
-fn.teste2()
+const caminho = path.join(__dirname, '..', 'dados', 'legendas')
+
+const arquivos = fn.lerDiretorio(caminho)
+console.log(arquivos)
