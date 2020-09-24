@@ -6,7 +6,7 @@ class Produto {
     this.desc = desc
   }
 
-  set nome() {
+  get nome() {
     return `Produto: ${this._nome}`
   }
 
@@ -25,4 +25,6 @@ const p2 = new Produto('geladeira', 15)
 
 console.log(p1.nome)
 console.log(p2.preco)
-console.log(p2.precoFinal())
+console.log(p2.precoFinal)
+
+console.log(typeof Produto)
