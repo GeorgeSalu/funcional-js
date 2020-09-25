@@ -13,6 +13,21 @@ function lerDiretorio(caminho) {
   })
 }
 
+function lerArquivo() {
+  return new Promise((resolve, reject) => {
+    try {
+      const conteudo = fs.readFileSync(caminho, {encoding: 'utf-8'})
+      resolve(conteudo.toString())
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
+
+function lerArquivos() {
+
+}
+
 function elementosTerminadosCom(array, padrao) {
   return array.filter(el => el.endsWith(padrao))
 }
