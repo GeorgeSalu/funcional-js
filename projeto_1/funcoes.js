@@ -36,10 +36,15 @@ function removerSeVazio(array) {
   return array.filter(el => el.trim())
 }
 
+function removerSeIncluir(array, padraoTextual) {
+  return array.filter(el => !el.includes(padraoTextual))
+}
+
 module.exports = {
   lerDiretorio,
   lerArquivo,
   lerArquivos,
   removerSeVazio,
+  removerSeIncluir,
   elementosTerminadosCom
 }
