@@ -13,7 +13,7 @@ function lerDiretorio(caminho) {
   })
 }
 
-function lerArquivo() {
+function lerArquivo(caminho) {
   return new Promise((resolve, reject) => {
     try {
       const conteudo = fs.readFileSync(caminho, {encoding: 'utf-8'})
@@ -24,8 +24,8 @@ function lerArquivo() {
   })
 }
 
-function lerArquivos() {
-
+function lerArquivos(caminhos) {
+  return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
 function elementosTerminadosCom(array, padrao) {
@@ -34,5 +34,7 @@ function elementosTerminadosCom(array, padrao) {
 
 module.exports = {
   lerDiretorio,
+  lerArquivo,
+  lerArquivos,
   elementosTerminadosCom
 }
