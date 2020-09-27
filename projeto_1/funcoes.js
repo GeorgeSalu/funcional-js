@@ -63,6 +63,12 @@ function removerSimbolos(simbolos) {
   }
 }
 
+function separarTextoPor(simbolo) {
+  return function(texto) {
+    return texto.split(simbolo)
+  }
+}
+
 module.exports = {
   lerDiretorio,
   lerArquivo,
@@ -71,5 +77,6 @@ module.exports = {
   removerElementoSeIncluir,
   removerElementoSeApenasNumero,
   removerSimbolos,
+  separarTextoPor,
   elementosTerminadosCom
 }

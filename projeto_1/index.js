@@ -7,16 +7,20 @@ const simbolos = [
   '.', '?', '-', ',', '"', '', '_', '<i>', '</i>', '\r', '[', ']', '(', ')'
 ]
 
-const mesclarConteudos = conteudos => conteudos.join('')
+const mesclarConteudos = array => array.join(' ')
 const separarPorLinhas = todoConteudo => todoConteudo.split('\n')
+const separarPorPalavras = todoConteudo => todoConteudo.split(' ')
 
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
   .then(mesclarConteudos)
-  .then(separarPorLinhas)
+  .then(fn.separarTextoPor('\n'))
   .then(fn.removerElementoSeVazio)
   .then(fn.removerElementoSeIncluir( '-->'))
   .then(fn.removerElementoSeApenasNumero)
   .then(fn.removerSimbolos(simbolos))
+  .then(mesclarConteudos)
+  .then(fn.separarTextoPor(' '))
+  .then(fn.removerElementoSeVazio)
   .then(console.log)
