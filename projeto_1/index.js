@@ -7,10 +7,6 @@ const simbolos = [
   '.', '?', '-', ',', '"', '', '_', '<i>', '</i>', '\r', '[', ']', '(', ')'
 ]
 
-const mesclarConteudos = array => array.join(' ')
-const separarPorLinhas = todoConteudo => todoConteudo.split('\n')
-const separarPorPalavras = todoConteudo => todoConteudo.split(' ')
-
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
