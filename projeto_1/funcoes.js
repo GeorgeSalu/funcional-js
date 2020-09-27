@@ -32,15 +32,15 @@ function elementosTerminadosCom(array, padrao) {
   return array.filter(el => el.endsWith(padrao))
 }
 
-function removerSeVazio(array) {
+function removerElementoSeVazio(array) {
   return array.filter(el => el.trim())
 }
 
-function removerSeIncluir(array, padraoTextual) {
+function removerElementoSeIncluir(array, padraoTextual) {
   return array.filter(el => !el.includes(padraoTextual))
 }
 
-function removerSeApenasNumero(array) {
+function removerElementoSeApenasNumero(array) {
   return array.filter(el => {
     const num = parseInt(el.trim())
     return num !== num
@@ -51,8 +51,8 @@ module.exports = {
   lerDiretorio,
   lerArquivo,
   lerArquivos,
-  removerSeVazio,
-  removerSeIncluir,
-  removerSeApenasNumero,
+  removerElementoSeVazio,
+  removerElementoSeIncluir,
+  removerElementoSeApenasNumero,
   elementosTerminadosCom
 }
