@@ -4,7 +4,8 @@ const fn = require('./funcoes')
 const caminho = path.join(__dirname, '..', 'dados', 'legendas')
 
 const simbolos = [
-  '.', '?', '-', ',', '"', '', '_', '<i>', '</i>', '\r', '[', ']', '(', ')'
+  '.', '?', '-', ',', '"', '', '_', '<i>',
+  '</i>', '\r', '[', ']', '(', ')'
 ]
 
 function agruparPalavras(palavras) {
