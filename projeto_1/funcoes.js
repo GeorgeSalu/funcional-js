@@ -28,7 +28,7 @@ function lerArquivos(caminhos) {
   return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
-function elementosTerminadosCom( padrao) {
+function elementosTerminadosCom(padrao) {
   return function(array) {
     return array.filter(el => el.endsWith(padrao))
   }
@@ -38,7 +38,7 @@ function removerElementoSeVazio(array) {
   return array.filter(el => el.trim())
 }
 
-function removerElementoSeIncluir( padraoTextual) {
+function removerElementoSeIncluir(padraoTextual) {
   return function(array) {
     return array.filter(el => !el.includes(padraoTextual))
   }
