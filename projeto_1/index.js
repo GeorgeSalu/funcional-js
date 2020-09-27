@@ -8,16 +8,13 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-function agruparPalavras(palavras) {
-  return palavras.reduce((agrupamento, palavra) => {
+function agruparElementos(palavras) {
+  return Object.values(palavras.reduce((acc, palavra) => {
     const p = palavra.toLowerCase()
-    if(agrupamento[p]) {
-      agrupamento[p] += 1
-    } else {
-      agrupamento[p] = 1
-    }
-    return agrupamento
-  }, {})
+    const qtde = acc[p] ? acc[p].qtde + 1 : 1
+    acc[p] = {elemento: p, qtde}
+    return acc
+  }, {}))
 }
 
 fn.lerDiretorio(caminho)
@@ -33,5 +30,5 @@ fn.lerDiretorio(caminho)
   .then(fn.separarTextoPor(' '))
   .then(fn.removerElementoSeVazio)
   .then(fn.removerElementoSeApenasNumero)
-  .then(agruparPalavras)
+  .then(agruparElementos)
   .then(console.log)
