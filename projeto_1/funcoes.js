@@ -28,8 +28,10 @@ function lerArquivos(caminhos) {
   return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
-function elementosTerminadosCom(array, padrao) {
-  return array.filter(el => el.endsWith(padrao))
+function elementosTerminadosCom( padrao) {
+  return function(array) {
+    return array.filter(el => el.endsWith(padrao))
+  }
 }
 
 function removerElementoSeVazio(array) {
