@@ -7,11 +7,14 @@ const simbolos = [
   '.', '?', '-', ',', '"', '', '_', '<i>', '</i>', '\r', '[', ']', '(', ')'
 ]
 
+const mesclarConteudos = conteudos => conteudos.join('')
+const separarPorLinhas = todoConteudo => todoConteudo.split('\n')
+
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
-  .then(conteudos => conteudos.join(''))
-  .then(todoConteudo => todoConteudo.split('\n'))
+  .then(mesclarConteudos)
+  .then(separarPorLinhas)
   .then(fn.removerElementoSeVazio)
   .then(fn.removerElementoSeIncluir( '-->'))
   .then(fn.removerElementoSeApenasNumero)
