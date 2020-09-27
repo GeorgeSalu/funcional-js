@@ -54,11 +54,9 @@ function removerElementoSeApenasNumero(array) {
 function removerSimbolos(simbolos) {
   return function(array) {
     return array.map(el => {
-      let novoTexto = el
-      simbolos.forEach(simbolo => {
-        novoTexto = novoTexto.split(simbolo).join('')
-      })
-      return novoTexto
+      return simbolos.reduce((acc, simbolo) => {
+        return acc.split(simbolo).join('')
+      }, el)
     })
   }
 }
