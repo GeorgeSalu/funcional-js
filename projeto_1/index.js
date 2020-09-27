@@ -8,15 +8,6 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-function agruparElementos(palavras) {
-  return Object.values(palavras.reduce((acc, palavra) => {
-    const p = palavra.toLowerCase()
-    const qtde = acc[p] ? acc[p].qtde + 1 : 1
-    acc[p] = {elemento: p, qtde}
-    return acc
-  }, {}))
-}
-
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
@@ -30,5 +21,5 @@ fn.lerDiretorio(caminho)
   .then(fn.separarTextoPor(' '))
   .then(fn.removerElementoSeVazio)
   .then(fn.removerElementoSeApenasNumero)
-  .then(agruparElementos)
+  .then(fn.agruparElementos)
   .then(console.log)
