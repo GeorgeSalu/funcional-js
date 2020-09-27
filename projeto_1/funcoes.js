@@ -63,6 +63,10 @@ function removerSimbolos(simbolos) {
   }
 }
 
+function mesclarConteudos (array) {
+  return array.join(' ')
+}
+
 function separarTextoPor(simbolo) {
   return function(texto) {
     return texto.split(simbolo)
@@ -78,5 +82,6 @@ module.exports = {
   removerElementoSeApenasNumero,
   removerSimbolos,
   separarTextoPor,
+  mesclarConteudos,
   elementosTerminadosCom
 }
