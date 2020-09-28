@@ -4,8 +4,8 @@ const path = require('path')
 function lerDiretorio(caminho) {
   return new Promise((resolve, reject) => {
     try {
-      const arquivos = fs.readdirSync(caminho)
-      const arquivosCompletos =  arquivos.map(arquivo => {
+      const arquivo = fs.readdirSync(caminho)
+      const arquivosCompletos =  arquivo.map(arquivo => {
         return path.join(caminho, arquivo)
       })
       resolve(arquivosCompletos)
