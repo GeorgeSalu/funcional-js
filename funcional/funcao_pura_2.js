@@ -1,3 +1,9 @@
+/**
+ * uma funcao pura é uma função em que o valor
+ * de retorno e determinado apenas por seus valores
+ * de entrada, sem efeitos colaterais observáveis
+ */
+
 function gerarNumeroAleatorio(min, max) {
   const fator = max - min + 1
   return parseInt(Math.random() * fator)+ min
