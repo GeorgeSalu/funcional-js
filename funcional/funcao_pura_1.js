@@ -14,3 +14,12 @@ function areaCirc(raio) {
 console.log(areaCirc(10))
 console.log(areaCirc(10))
 console.log(areaCirc(10))
+
+// funcao pura
+function areaCircPura(raio, pi) {
+  return raio * raio * pi
+}
+
+console.log(areaCircPura(10, 3.14))
+console.log(areaCircPura(10, 3.14))
+console.log(areaCircPura(10, Math.PI))
