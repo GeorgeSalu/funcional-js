@@ -1,8 +1,8 @@
 /**
- * uma funcao pura é uma função em que o valor
- * de retorno e determinado APENAS por seus valores
+ * uma função pura é uma função em que o valor
+ * de retorno é determinado APENAS por seus valores
  * de entrada, sem efeitos colaterais observáveis
- */
+*/
 
 // função impura
 function gerarNumeroAleatorio(min, max) {
