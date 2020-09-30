@@ -6,7 +6,7 @@
 
 const PI = 3.14
 
-// impura - PI é um valor externo
+// função impura - PI é um valor externo
 function areaCirc(raio) {
   return raio * raio * PI
 }
@@ -15,7 +15,7 @@ console.log(areaCirc(10))
 console.log(areaCirc(10))
 console.log(areaCirc(10))
 
-// funcao pura
+// função pura
 function areaCircPura(raio, pi) {
   return raio * raio * pi
 }
