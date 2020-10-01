@@ -3,7 +3,7 @@
  * tomando-as como argumentos ou retornando-as,
  * são chamadas de higher-order functions.
  *
- */
+*/
 
 function executar(fn, ...params) {
   return function(textoInicial) {
