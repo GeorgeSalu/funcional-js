@@ -14,3 +14,8 @@ function somar(a, b) {
 
 console.log(qtdeDeExecucoes)
 console.log(somar(68, 31))
+console.log(somar(68, 31))
+console.log(somar(68, 31))
+console.log(somar(68, 31))
+console.log(somar(68, 31))
+console.log(qtdeDeExecucoes)
