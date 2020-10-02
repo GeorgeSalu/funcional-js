@@ -1,11 +1,11 @@
-const pessoa = {
+const pessoa = Object.freeze({
   nome: 'maria',
   altura: 1.76,
   cidade: 'sao paulo',
-  end: {
+  end: Object.freeze({
     rua:  'feliz'
-  }
-}
+  })
+})
 
 const outraPessoa = pessoa
 
