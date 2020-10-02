@@ -1,7 +1,7 @@
 /**
  * closure é quando uma função "lembra"
- * seu escopo lexico, mesmo quando a funcção
- * é executada fora desse escopo lexico
+ * seu escopo léxico, mesmo quando a funcção
+ * é executada fora desse escopo léxico
 */
 
 const somarXMais3 = require('./closure_escopo')
