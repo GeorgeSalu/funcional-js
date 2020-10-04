@@ -1,3 +1,5 @@
+// flatMap
+
 const letrasAninhadas = [
   ['o','l','a'],
   [' '],
@@ -6,7 +8,6 @@ const letrasAninhadas = [
 ]
 
 const letras = letrasAninhadas.flat(Infinity)
-
 
 const resultado = letrasAninhadas
   .flatMap(l => [l,','])
