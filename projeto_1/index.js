@@ -7,9 +7,26 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-fn.composicao()
+fn.composicao(
+  fn.lerDiretorio,
+  fn.elementosTerminadosCom('.srt'),
+  fn.lerArquivos,
+  fn.mesclarConteudos,
+  fn.separarTextoPor('\n'),
+  fn.removerElementoSeVazio,
+  fn.removerElementoSeIncluir('-->'),
+  fn.removerElementoSeApenasNumero,
+  fn.removerSimbolos(simbolos),
+  fn.mesclarConteudos,
+  fn.separarTextoPor(' '),
+  fn.removerElementoSeVazio,
+  fn.removerElementoSeApenasNumero,
+  fn.agruparElementos,
+  fn.ordenarPorAtributoNumerico('qtde'),
+  console.log
+)(caminho)
 
-fn.lerDiretorio(caminho)
+/*fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
   .then(fn.mesclarConteudos)
@@ -25,3 +42,4 @@ fn.lerDiretorio(caminho)
   .then(fn.agruparElementos)
   .then(fn.ordenarPorAtributoNumerico('qtde'))
   .then(console.log)
+*/
