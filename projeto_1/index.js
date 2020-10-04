@@ -7,6 +7,8 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
+fn.composicao()
+
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
