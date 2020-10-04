@@ -40,3 +40,9 @@ O que você aprenderá.
 Há algum requisito ou pré-requisito para o curso?
 
   - Conhecer o básico de JavaScript
+
+Para quem é este curso:
+
+  - Desenvolvedores que desejam dominar o Paradigma Funcional em JavaScript
+  - Desenvolvedores que desejam dominar o uso de funções em JavaScript
+  - Desenvolvedores que desejam aprender Programação Reativa com RxJS
