@@ -36,3 +36,7 @@ O que você aprenderá.
   - Aprender a usar Callbacks, Promises, Async/Await.
   - Higher-Order Functions, First-Class Functions, Currying, Functors, Composição de Funções, Imutabilidade, Lambda Calculus...
   - Programação reativa com RxJS! Observables, Operadores, Subject, Scheduler...
+
+Há algum requisito ou pré-requisito para o curso?
+
+  - Conhecer o básico de JavaScript
