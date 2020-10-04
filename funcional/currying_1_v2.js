@@ -2,6 +2,7 @@ function textoComTamanhoEntre(min) {
   return function(max) {
     return function(erro) {
       return function(texto) {
+        // lazy evaluation
         const tamanho = (texto || '').trim().length
 
         if(tamanho < min || tamanho > max) {
@@ -12,5 +13,8 @@ function textoComTamanhoEntre(min) {
   }
 }
 
+const forcarTamanhoPadrao = textoComTamanhoEntre(4)(255)
+const forcarNomeProdutoValido = forcarTamanhoPadrao('noe produto invalido')
+
 const p1 = { nome: 'a', preco: 14.99, desc: 0.25 }
-textoComTamanhoEntre(4, 225, 'nome invalido', p1.nome)
+forcarNomeProdutoValido(p1.nome)
