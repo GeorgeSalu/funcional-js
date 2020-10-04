@@ -7,6 +7,7 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
+// usando decomposicao de funcoes
 fn.composicao(
   fn.lerDiretorio,
   fn.elementosTerminadosCom('.srt'),
@@ -26,7 +27,8 @@ fn.composicao(
   console.log
 )(caminho)
 
-/*fn.lerDiretorio(caminho)
+/* usando promisse
+fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
   .then(fn.mesclarConteudos)
