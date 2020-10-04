@@ -7,3 +7,23 @@ function composicao(...fns) {
     }, valor)
   }
 }
+
+function gritar(texto) {
+  return texto.toUpperCase()
+}
+
+function enfatizar(texto) {
+  return `${texto} !!!!`
+}
+
+function tornarLento(texto) {
+  return texto.split('').join(' ')
+}
+
+const resultado = composicao(
+  gritar,
+  enfatizar,
+  tornarLento
+)('para')
+
+console.log(resultado)
