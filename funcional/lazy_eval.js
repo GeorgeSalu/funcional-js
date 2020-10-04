@@ -1,6 +1,6 @@
 function eager(a, b) {
 
-  // procesamento mas pesado
+  // processamento mas pesado
   const fim = Date.now() + 2500
   while(Date.now() < fim) {}
 
@@ -10,7 +10,7 @@ function eager(a, b) {
 
 function lazy(a) {
 
-  // procesamento mas pesado
+  // processamento mas pesado
   const fim = Date.now() + 2500
   while(Date.now() < fim) {}
 
