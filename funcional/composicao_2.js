@@ -40,5 +40,7 @@ const umPoucoMenosExagerado = composicao(
   enfatizar
 )
 
-exagerado('para').then(console.log)
-umPoucoMenosExagerado('agora').then(console.log)
+exagerado('para')
+  .then(console.log)
+umPoucoMenosExagerado('agora')
+  .then(console.log)
