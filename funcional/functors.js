@@ -1,4 +1,7 @@
-// wrapper
+/**
+ * functors são objetos que implementam a função MAP
+ * que também é um "wrapper" de um valor
+*/
 
 const nums = [1,2,3,4,5,6]
 
