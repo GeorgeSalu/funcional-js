@@ -1,4 +1,3 @@
-
 function gerarNumeros() {
   return {
       iniciar(fn, intervalo = 1000) {
