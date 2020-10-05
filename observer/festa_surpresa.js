@@ -14,17 +14,13 @@ function obterResposta(pergunta) {
 }
 
 function namorada() {
-  setTimeout(() => {
-    console.log('n: apagar as luzes')
-    console.log('n: pedir silencio')
-    console.log('n: surpresa')
-  }, 2000)
+  console.log('n: apagar as luzes')
+  console.log('n: pedir silencio')
+  console.log('n: surpresa')
 }
 
 function sindico() {
-  setTimeout(() => {
-    console.log('s: monitorando barulho')
-  }, 1000)
+  console.log('s: monitorando barulho')
 }
 
 function porteiro(interessados) {
