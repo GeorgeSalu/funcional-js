@@ -13,6 +13,7 @@ function obterResposta(pergunta) {
   })
 }
 
+// observer
 function namorada() {
   console.log('n: apagar as luzes')
   console.log('n: pedir silencio')
@@ -20,8 +21,9 @@ function namorada() {
 }
 
 // observer
-function sindico() {
+function sindico(evento) {
   console.log('s: monitorando barulho')
+  console.log(`s: ${evento.resp}`)
 }
 
 // subject
@@ -30,7 +32,7 @@ function porteiro(interessados) {
     const resp = await obterResposta('o namorado chegou? (s/n/q) ')
     if(resp.toLowerCase() === 's') {
       // os observadores são notificados
-      (interessados || []).forEach(obs => obs())
+      (interessados || []).forEach(obs => obs({ resp, data: Date.now() }))
     } else if(resp.toLowerCase() === 'q') {
       break
     }
