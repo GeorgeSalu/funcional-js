@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/GeorgeSalu/funcional-js/issues"
   },
-  "homepage": "https://github.com/GeorgeSalu/funcional-js#readme"
+  "homepage": "https://github.com/GeorgeSalu/funcional-js#readme",
+  "dependencies": {
+    "rxjs": "^6.5.5"
+  }
 }
