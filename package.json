@@ -1,0 +1,20 @@
+{
+  "name": "funcional-js",
+  "version": "1.0.0",
+  "description": "Nos últimos anos várias linguagens acrescentaram aspectos de Programação Funcional, então esse curso é um oportunidade de aprender o Paradigma Funcional e ainda tornar um programador JavaScript muito melhor! Por esse motivo, compreender o paradigma funcional é importante mesmo que você use linguagens Orientadas a Objeto, e garantido que você se tornará um programador melhor e mais completo!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgeSalu/funcional-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgeSalu/funcional-js/issues"
+  },
+  "homepage": "https://github.com/GeorgeSalu/funcional-js#readme"
+}
