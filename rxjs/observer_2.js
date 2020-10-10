@@ -18,3 +18,16 @@ obs.subscribe(
   erro => console.log(`erro: ${erro}`),
   () => console.log('fim')
 )
+
+// uma segunda forma usando objeto
+obs.subscribe({
+  next(valor) {
+    console.log(`valor : ${valor}`)
+  },
+  error(msg) {
+    console.log(`Erro: ${msg}`)
+  },
+  complete() {
+    console.log('fim')
+  }
+})
