@@ -15,9 +15,14 @@ function primeiro() {
 function ultimo() {
   return function(source) {
     return Observable.create(subscriber => {
+      let ultimo
       source.subscribe({
         next(v) {
-          subscriber.next(v + 2000)
+          ultimo = v
+        },
+        complete() {
+          subscriber.next(ultimo)
+          subscriber.complete()
         }
       })
     })
