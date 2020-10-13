@@ -7,7 +7,6 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-
 /* usando promisse */
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
