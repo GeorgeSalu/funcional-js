@@ -1,13 +1,16 @@
 // Os dois tipos...
 
  //1. operadores de criação
-const { of } = require('rxjs')
+const { from } = require('rxjs')
 
 // 2. operadores de encadeamento (pipeable op.)
-const { last } = require('rxjs/operators')
+const { last, map } = require('rxjs/operators')
 
-of(1,2, 'ana', false, 'ultimo')
-  .pipe(last())
+from([1,2, 'ana', false, 'ultimo'])
+  .pipe(
+    last(),
+    map(v => v[0])
+  )
   .subscribe(function(valor) {
-    console.log(`o valor gerado foi ${valor}`)
+    console.log(valor)
   })
