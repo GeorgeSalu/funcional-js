@@ -7,27 +7,8 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-// usando decomposicao de funcoes
-fn.composicao(
-  fn.lerDiretorio,
-  fn.elementosTerminadosCom('.srt'),
-  fn.lerArquivos,
-  fn.mesclarConteudos,
-  fn.separarTextoPor('\n'),
-  fn.removerElementoSeVazio,
-  fn.removerElementoSeIncluir('-->'),
-  fn.removerElementoSeApenasNumero,
-  fn.removerSimbolos(simbolos),
-  fn.mesclarConteudos,
-  fn.separarTextoPor(' '),
-  fn.removerElementoSeVazio,
-  fn.removerElementoSeApenasNumero,
-  fn.agruparElementos,
-  fn.ordenarPorAtributoNumerico('qtde'),
-  console.log
-)(caminho)
 
-/* usando promisse
+/* usando promisse */
 fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
@@ -44,4 +25,3 @@ fn.lerDiretorio(caminho)
   .then(fn.agruparElementos)
   .then(fn.ordenarPorAtributoNumerico('qtde'))
   .then(console.log)
-*/
