@@ -24,6 +24,7 @@ function ultimo() {
   }
 }
 
+// desafio selecionar o ultimo elemento
 from([1,2,3,4,5])
   //.pipe(primeiro())
   .pipe(ultimo())
