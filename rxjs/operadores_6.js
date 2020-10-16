@@ -1,21 +1,23 @@
 const {from, Observable} = require('rxjs')
 
 
-function createPipeableOperator() {
-
-}
-
-function primeiro() {
+function createPipeableOperator(nextFn) {
   return function(source) {
     return Observable.create(subscriber => {
       source.subscribe({
         next(v) {
-          subscriber.next(v)
-          subscriber.complete()
+          nextFn(subscriber, v)
         }
       })
     })
   }
+}
+
+function primeiro() {
+  return createPipeableOperator((subscriber, v) => {
+    subscriber.next(v)
+    subscriber.complete()
+  })
 }
 
 function nenhum() {
@@ -51,6 +53,7 @@ function ultimo() {
 
 // desafio selecionar o ultimo elemento
 from([1,2,3,4,5])
-  //.pipe(primeiro())
-  .pipe(ultimo())
+  .pipe(
+    primeiro()
+  )
   .subscribe(console.log)
