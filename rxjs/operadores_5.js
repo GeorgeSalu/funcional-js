@@ -5,7 +5,11 @@ function terminadoCom(parteFinal) {
     return Observable.create(subscriber => {
       fonte.subscribe({
         next(texto) {
-          if(texto.endsWith(parteFinal)) {
+          if(Array.isArray(texto)) {
+            subscriber.next(
+              texto.filter(el => el.endsWith(parteFinal))
+            )
+          }else if(texto.endsWith(parteFinal)) {
             subscriber.next(texto)
           }
         },
