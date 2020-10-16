@@ -1,5 +1,10 @@
 const {from, Observable} = require('rxjs')
 
+
+function createPipeableOperator() {
+
+}
+
 function primeiro() {
   return function(source) {
     return Observable.create(subscriber => {
