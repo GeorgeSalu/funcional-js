@@ -5,7 +5,20 @@ function primeiro() {
     return Observable.create(subscriber => {
       source.subscribe({
         next(v) {
-          subscriber.next(1)
+          subscriber.next(v)
+          subscriber.complete()
+        }
+      })
+    })
+  }
+}
+
+function nenhum() {
+  return function(source) {
+    return Observable.create(subscriber => {
+      source.subscribe({
+        next(v) {
+          subscriber.complete()
         }
       })
     })
@@ -21,7 +34,9 @@ function ultimo() {
           ultimo = v
         },
         complete() {
-          subscriber.next(ultimo)
+          if(ultimo !== undefined) {
+            subscriber.next(ultimo)
+          }
           subscriber.complete()
         }
       })
