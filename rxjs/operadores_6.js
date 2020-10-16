@@ -1,21 +1,21 @@
 const {from, Observable} = require('rxjs')
 
 
-function createPipeableOperator(nextGenerator) {
+function createPipeableOperator(operator) {
   return function(source) {
     return Observable.create(subscriber => {
-      source.subscribe({
-        next: nextGenerator(subscriber)
-      })
+      source.subscribe(operator(subscriber))
     })
   }
 }
 
 function primeiro() {
-  return createPipeableOperator(subscriber => valor => {
-      subscriber.next(valor)
+  return createPipeableOperator(subscriber => ( {
+     next(v) {
+      subscriber.next(v)
       subscriber.complete()
-  })
+     }
+  }))
 }
 
 function nenhum() {
