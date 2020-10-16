@@ -12,16 +12,10 @@ function createPipeableOperator(nextGenerator) {
 }
 
 function primeiro() {
-  return createPipeableOperator(function (subscriber) {
-    return function(valor) {
+  return createPipeableOperator(subscriber => valor => {
       subscriber.next(valor)
       subscriber.complete()
-    }
   })
-  /*return createPipeableOperator((subscriber, v) => {
-    subscriber.next(v)
-    subscriber.complete()
-  })*/
 }
 
 function nenhum() {
