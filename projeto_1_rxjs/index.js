@@ -5,7 +5,7 @@ const { first } = require('rxjs/operators')
 const caminho = path.join(__dirname, '..', 'dados', 'legendas')
 const simbolos = [
   '.', '?', '-', ',', '"', '', '_', '<i>',
-  '</i>', '\r', '[', ']', '(', ')'
+  '</i>', '\r', '[', ']', '(', ')', '!'
 ]
 
 fn.lerDiretorio(caminho)
@@ -16,6 +16,8 @@ fn.lerDiretorio(caminho)
     fn.removerElementoSeVazio(),
     fn.removerElementoSeIniciarComNumero(),
     fn.removerSimbolos(simbolos),
+    fn.separarTextoPor(' '),
+    fn.removerElementoSeVazio(),
     //first()
   )
   .subscribe(console.log)
