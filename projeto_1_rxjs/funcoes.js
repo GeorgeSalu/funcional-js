@@ -55,12 +55,6 @@ function removerElementoSeVazio() {
   }))
 }
 
-function removerElementoSeIncluir(padraoTextual) {
-  return function(array) {
-    return array.filter(el => !el.includes(padraoTextual))
-  }
-}
-
 function removerElementoSeIniciarComNumero(array) {
   return createPipeableOperator(subscriber => ({
     next(texto) {
@@ -132,7 +126,6 @@ module.exports = {
   lerArquivo,
   lerArquivos,
   removerElementoSeVazio,
-  removerElementoSeIncluir,
   removerElementoSeIniciarComNumero,
   removerSimbolos,
   separarTextoPor,
