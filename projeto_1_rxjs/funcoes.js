@@ -62,10 +62,14 @@ function removerElementoSeIncluir(padraoTextual) {
 }
 
 function removerElementoSeApenasNumero(array) {
-  return array.filter(el => {
-    const num = parseInt(el.trim())
-    return num !== num
-  })
+  return createPipeableOperator(subscriber => ({
+    next(texto) {
+      const num = parseInt(texto.trim())
+      if(num !== num) {
+        subscriber.next(texto)
+      }
+    }
+  }))
 }
 
 function removerSimbolos(simbolos) {
