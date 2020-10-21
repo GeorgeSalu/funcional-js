@@ -61,7 +61,7 @@ function removerElementoSeIncluir(padraoTextual) {
   }
 }
 
-function removerElementoSeApenasNumero(array) {
+function removerElementoSeIniciarComNumero(array) {
   return createPipeableOperator(subscriber => ({
     next(texto) {
       const num = parseInt(texto.trim())
@@ -133,7 +133,7 @@ module.exports = {
   lerArquivos,
   removerElementoSeVazio,
   removerElementoSeIncluir,
-  removerElementoSeApenasNumero,
+  removerElementoSeIniciarComNumero,
   removerSimbolos,
   separarTextoPor,
   mesclarConteudos,
