@@ -30,10 +30,14 @@ function lerArquivos(caminhos) {
   return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
-function elementosTerminadosCom(padrao) {
-  return function(array) {
-    return array.filter(el => el.endsWith(padrao))
-  }
+function elementosTerminadosCom(padraoTextual) {
+  return createPipeableOperator(subscriber => ({
+    next(texto) {
+      if(texto.endsWith(padraoTextual)) {
+        subscriber.next(texto)
+      }
+    }
+  }))
 }
 
 function removerElementoSeVazio(array) {
@@ -87,6 +91,19 @@ function ordenarPorAtributoNumerico(attr, ordem = 'asc') {
     const asc = (o1, o2) => o1[attr] - o2[attr]
     const desc = (o1, o2) => o2[attr] - o1[attr]
     return [...array].sort(ordem === 'asc' ? asc : desc)
+  }
+}
+
+function createPipeableOperator(operatorFn) {
+  return function(source) {
+    return Observable.create(subscriber => {
+      const sub = operatorFn(subscriber)
+      source.subscribe({
+        next: sub.next,
+        error: sub.error || (e => subscriber.error(e)),
+        complete: sub.complete || (e => subscriber.complete(e))
+      })
+    })
   }
 }
 
