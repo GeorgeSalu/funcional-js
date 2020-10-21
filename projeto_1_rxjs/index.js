@@ -12,23 +12,3 @@ fn.lerDiretorio(caminho)
     fn.elementosTerminadosCom('.srt')
   )
   .subscribe(console.log)
-
-
-/* usando promisse */
-/*fn.lerDiretorio(caminho)
-  .then(fn.elementosTerminadosCom('.srt'))
-  .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
-  .then(fn.mesclarConteudos)
-  .then(fn.separarTextoPor('\n'))
-  .then(fn.removerElementoSeVazio)
-  .then(fn.removerElementoSeIncluir('-->'))
-  .then(fn.removerElementoSeApenasNumero)
-  .then(fn.removerSimbolos(simbolos))
-  .then(fn.mesclarConteudos)
-  .then(fn.separarTextoPor(' '))
-  .then(fn.removerElementoSeVazio)
-  .then(fn.removerElementoSeApenasNumero)
-  .then(fn.agruparElementos)
-  .then(fn.ordenarPorAtributoNumerico('qtde'))
-  .then(console.log)
-*/
