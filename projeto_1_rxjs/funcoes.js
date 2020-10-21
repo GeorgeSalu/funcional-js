@@ -1,29 +1,16 @@
 const fs = require('fs')
 const path = require('path')
-
-function composicao(...fns) {
-  return function(valor) {
-    return fns.reduce( async (acc, fn) => {
-      if(Promise.resolve(acc) === acc) {
-
-        return fn( await acc)
-      } else {
-        return fn(acc)
-      }
-    }, valor)
-  }
-}
+const { Observable } = require('rxjs')
 
 function lerDiretorio(caminho) {
-  return new Promise((resolve, reject) => {
+  return new Observable(subscriber => {
     try {
-      const arquivo = fs.readdirSync(caminho)
-      const arquivosCompletos =  arquivo.map(arquivo => {
-        return path.join(caminho, arquivo)
+      fs.readFileSync(caminho).forEach(arquivo => {
+        subscriber.next(path.join(caminho, arquivo))
       })
-      resolve(arquivosCompletos)
+      subscriber.complete()
     }catch(e) {
-      reject(e)
+      subscriber.error(e)
     }
   })
 }
@@ -104,7 +91,6 @@ function ordenarPorAtributoNumerico(attr, ordem = 'asc') {
 }
 
 module.exports = {
-  composicao,
   lerDiretorio,
   lerArquivo,
   lerArquivos,
