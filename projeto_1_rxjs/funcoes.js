@@ -5,7 +5,7 @@ const { Observable } = require('rxjs')
 function lerDiretorio(caminho) {
   return new Observable(subscriber => {
     try {
-      fs.readFileSync(caminho).forEach(arquivo => {
+      fs.readdirSync(caminho).forEach(arquivo => {
         subscriber.next(path.join(caminho, arquivo))
       })
       subscriber.complete()

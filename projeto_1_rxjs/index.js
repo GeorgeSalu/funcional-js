@@ -7,8 +7,12 @@ const simbolos = [
   '</i>', '\r', '[', ']', '(', ')'
 ]
 
-/* usando promisse */
 fn.lerDiretorio(caminho)
+  .subscribe(console.log)
+
+
+/* usando promisse */
+/*fn.lerDiretorio(caminho)
   .then(fn.elementosTerminadosCom('.srt'))
   .then(arquivosSRT => fn.lerArquivos(arquivosSRT))
   .then(fn.mesclarConteudos)
@@ -24,3 +28,4 @@ fn.lerDiretorio(caminho)
   .then(fn.agruparElementos)
   .then(fn.ordenarPorAtributoNumerico('qtde'))
   .then(console.log)
+*/
