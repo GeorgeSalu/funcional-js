@@ -67,13 +67,16 @@ function removerElementoSeIniciarComNumero(array) {
 }
 
 function removerSimbolos(simbolos) {
-  return function(array) {
-    return array.map(el => {
-      return simbolos.reduce((acc, simbolo) => {
-        return acc.split(simbolo).join('')
-      }, el)
-    })
-  }
+  return createPipeableOperator(subscriber => ({
+    next(texto) {
+      const textoSemSimbolos = simbolos.reduce(
+        (acc, simbolo) => {
+          return acc.split(simbolo).join('')
+        }, texto)
+
+      subscriber.next(textoSemSimbolos)
+    }
+  }))
 }
 
 function mesclarConteudos (array) {

@@ -15,6 +15,7 @@ fn.lerDiretorio(caminho)
     fn.separarTextoPor('\n'),
     fn.removerElementoSeVazio(),
     fn.removerElementoSeIniciarComNumero(),
+    fn.removerSimbolos(simbolos),
     //first()
   )
   .subscribe(console.log)
